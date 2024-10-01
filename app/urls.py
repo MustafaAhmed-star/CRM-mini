@@ -1,29 +1,31 @@
 
 from django.urls import path
 
-from . import views
+from . import views0
+from app.views.create_record import create_record_view
+from app.views.dashboard_view import dashboard_view
 
 urlpatterns = [
 
-    path('', views.home, name=""),
+    path('', views0.home, name=""),
 
-    path('register', views.register, name="register"),
+    path('register', views0.register, name="register"),
 
-    path('my-login', views.my_login, name="my-login"),
+    path('my-login', views0.my_login, name="my-login"),
 
-    path('user-logout', views.user_logout, name="user-logout"),
+    path('user-logout', views0.user_logout, name="user-logout"),
 
     # CRUD
 
-    path('dashboard', views.dashboard, name="dashboard"),
+    path('dashboard', dashboard_view, name="dashboard"),
 
-    path('create-record', views.create_record, name="create-record"),
+    path('create-record', create_record_view, name="create-record"),
 
-    path('update-record/<int:pk>', views.update_record, name='update-record'),
+    path('update-record/<int:pk>', views0.update_record, name='update-record'),
 
-    path('record/<int:pk>', views.singular_record, name="record"),
+    path('record/<int:pk>', views0.singular_record, name="record"),
 
-    path('delete-record/<int:pk>', views.delete_record, name="delete-record"),
+    path('delete-record/<int:pk>', views0.delete_record, name="delete-record"),
 
     
 
