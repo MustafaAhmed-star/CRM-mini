@@ -72,38 +72,38 @@ def my_login(request):
 
 # - Dashboard
 
-@login_required(login_url='my-login')
-def dashboard(request):
+# @login_required(login_url='my-login')
+# def dashboard(request):
 
-    my_records = Record.objects.all()
+#     my_records = Record.objects.all()
 
-    context = {'records': my_records}
+#     context = {'records': my_records}
 
-    return render(request, 'webapp/dashboard.html', context=context)
+#     return render(request, 'webapp/dashboard.html', context=context)
 
 
 # - Create a record 
 
-@login_required(login_url='my-login')
-def create_record(request):
+# @login_required(login_url='my-login')
+# def create_record(request):
 
-    form = CreateRecordForm()
+#     form = CreateRecordForm()
 
-    if request.method == "POST":
+#     if request.method == "POST":
 
-        form = CreateRecordForm(request.POST)
+#         form = CreateRecordForm(request.POST)
 
-        if form.is_valid():
+#         if form.is_valid():
 
-            form.save()
+#             form.save()
 
-            messages.success(request, "Your record was created!")
+#             messages.success(request, "Your record was created!")
 
-            return redirect("dashboard")
+#             return redirect("dashboard")
 
-    context = {'form': form}
+#     context = {'form': form}
 
-    return render(request, 'webapp/create-record.html', context=context)
+#     return render(request, 'webapp/create-record.html', context=context)
 
 
 # - Update a record 

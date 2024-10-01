@@ -4,6 +4,7 @@ from django.urls import path
 from . import views0
 from app.views.create_record import create_record_view
 from app.views.dashboard_view import dashboard_view
+from app.views.update_record_view import update_record_view
 
 urlpatterns = [
 
@@ -21,7 +22,7 @@ urlpatterns = [
 
     path('create-record', create_record_view, name="create-record"),
 
-    path('update-record/<int:pk>', views0.update_record, name='update-record'),
+    path('update-record/<int:pk>',update_record_view, name='update-record'),
 
     path('record/<int:pk>', views0.singular_record, name="record"),
 
